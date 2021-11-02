@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>第6回(編集中)</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+
+    <div><h2>プログラミングの可能性</h2>
+    <h3>班で出た案</h3>
+
+<h3>実際に作ったプログラム</h3>
+用途：VScodeのGit Hubへの反映を自動化したい！<br>
+内容：<br>
+<ul>
+ <li>コマンドプロントを立ち上げる</li>
+ <li>HP更新のためのコマンドを打ち込む</li>
+ <li>コマンドプロンプトを終了する</li>
+</ul>
+この段階を目視しながら自動的に打ち込まれるようなシステム<br>
+<ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;">import pyautogui</li>
+    <li style="background-color:#EEF;">import time</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;"># コマンドプロンプトを開く</li>
+    <li style="background-color:#EFF;">pyautogui.press('win')</li>
+    <li style="background-color:#EEF;">pyautogui.write('komando')</li>
+    <li style="background-color:#EFF;">time.sleep(1)</li>
+    <li style="background-color:#EEF;">pyautogui.press('enter')</li>
+    <li style="background-color:#EFF;">time.sleep(2)</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;"># 文字入力</li>
+    <li style="background-color:#EEF;">pyautogui.write('cd mygit/xbp')</li>
+    <li style="background-color:#EFF;">pyautogui.press('enter')</li>
+    <li style="background-color:#EEF;">time.sleep(3)</li>
+    <li style="background-color:#EFF;">#読み込み時間のために数秒待つ</li>
+    <li style="background-color:#EEF;">pyautogui.write('git status')</li>
+    <li style="background-color:#EFF;">pyautogui.press('enter')</li>
+    <li style="background-color:#EEF;">time.sleep(3)</li>
+    <li style="background-color:#EFF;">pyautogui.write('git add .')</li>
+    <li style="background-color:#EEF;">pyautogui.press('enter')</li>
+    <li style="background-color:#EFF;">time.sleep(5)</li>
+    <li style="background-color:#EEF;">pyautogui.write('git commit -m "20211102"')</li>
+    <li style="background-color:#EFF;">pyautogui.press('enter')</li>
+    <li style="background-color:#EEF;">time.sleep(5)</li>
+    <li style="background-color:#EFF;">pyautogui.write('git push')</li>
+    <li style="background-color:#EEF;">pyautogui.press('enter')</li>
+    <li style="background-color:#EFF;">time.sleep(10)</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;"># コマンドプロントの終了</li>
+    <li style="background-color:#EFF;">pyautogui.hotkey('alt', 'f4')</li>
+    </ol></code>
+<br>
+
+参考：python でキーボード入力を自動化できるコードを応用して入力されるようにした<br>
+<a href="https://techacademy.jp/magazine/46562" target="_blank">Pythonでキーボード入力を自動化する方法を現役エンジニアが解説【初心者向け】(外部サイト)</a>
+    </div>
+</body>
+</html>
