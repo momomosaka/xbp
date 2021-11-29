@@ -9,12 +9,18 @@ logo img{
     width: 150px;
     height: 150px;
     object-fit: cover; /* 画像のトリミング */
+    text-align: center;
 }
 
-logotohome img{
+.logotohome {
+    margin: auto;
+    text-align: center;
+}
+
+.logotohome img{
     border-radius: 70%;
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     object-fit: cover; /* 画像のトリミング */
 }
 
