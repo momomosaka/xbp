@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>第1回</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    4/11　第一回授業＜マイコンボード＞<br>
+
+        <h2>マイコンボードの基本</h2>
+    
+    <div><h3>プログラムの基本</h3>
+    <div>
+        {}で囲まれた間が実行されるプログラム<br>
+        <br>
+        <strong><span style="color: #ff0000;">setupとloop</span></strong><br>
+         setup→最初に<span style="color: fuchsia;">一回だけ</span>実行<br>
+         loop→すっと<span style="color: fuchsia;">繰り返し</span>実行<br>
+       <br>
+       <strong><span style="color: #ff0000;">；(セミコロン)</span></strong><br>
+        <span style="color: fuchsia;">命令文</span>の最後につける<br>
+        <br>
+        <strong><span style="color: #ff0000;">FORとIF</span></strong><br>
+         For:(初期化式;条件式;変化式) <br>
+         If:条件で起動
+    </div>
+    <h3>degutalWrite,デジタルピンの設定</h3>
+    <div>
+        pinMode:ピンの指定、入力出力を設定する<br>
+    LOW→LEDが消える(0V出力)<br>
+    HIGH→LEDがつく(5V出力) <br>
+<br></div>
+<h3>練習１.Lチカ</h3>
+<div>
+    LEDを指定した間隔でチカチカさせるプログラム<br>
+    <h4>＜メモ＞</h4>
+    LEDの＋(長い方)－(短い方)を注意する<br>
+    それぞれ使う部品ごとに抵抗が決まっている<br>
+    <strong>手順</strong> <br>
+    1.LEDの＋を13番のピンにつなぐ <br>
+    2.LEDライトの－(短い方)をGNDに繋ぐ<br>
+    3.Arduino IDEにプログラムを書き込み、Arduinoに送る<br>
+    4.LEDライト点灯<br>
+    <br>
+    <strong>＜コード＞</strong><br>
+    <br>
+    <img src="images/スクリーンショット 2022-07-25 113044.png" width=30%>
+    </div>
+<h3>練習2.光センサー</h3>
+<div>
+    <strong>Cdsセンサー</strong>(光センサー)を使って明るさを測定する<br>
+
+</div>
+        <h3>光センサーとLチカの組み合わせ</h3>
+        <div><strong>＜コード＞</strong><br>
+        <br>
+        <img src="images/スクリーンショット 2022-07-25 113612.png" width="30%
+"></div>
+    
+
+    
+
+</div>
+<h2>次回までの課題</h2>
+<div>
+    <h4>正の感情</h4>
+    <ul>
+        <li>嬉しい：友達と久しぶりに会えた時、美味しいものを食べたとき、新しい服をかったとき</li>
+        <li>落ち着く：暗い所にいる時、家でゴロゴロしているとき</li>
+        <li>テンションが上がる：好きな曲を聞いてるとき、趣味のことをしているとき</li>
+        <li>清々しい：朝早く起きれたとき、すいている電車に乗っているとき</li>
+    </ul>
+    <h4>負の感情</h4>
+    <ul>
+        <li>悲しい：ダメ出しされたとき、他人に冷たくされたとき</li>
+        <li>イライラする：人が多い所に行ったとき</li>
+        <li>モヤモヤする：自分の予定通りに行動ができなかったとき</li>
+    </ul>
+</div>
+</div>
+
+</body>
+
+    
+
+</body>
+</html>

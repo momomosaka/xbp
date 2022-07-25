@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>第2回</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    <h1>参考：授業で試用したプログラムコード</h1>
+<div>
+      <h2>1.シンプルに光らせる</h2>
+      <hr size="5" noshade>
+      <br>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+        <li style="background-color:#EFF;">#include &lt;Adafruit_NeoPixel.h&gt;</li>
+        <li style="background-color:#EEF;">#define PIN        9 // 信号用のピンを指定</li>
+        <li style="background-color:#EFF;">#define NUMPIXELS 5 // LEDの数を指定</li>
+        <li style="background-color:#EEF;">int brightness=50;//明るさ</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">void setup() {</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;pixels.begin(); // NeoPixel//出力ピンの初期化</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;pixels.setBrightness(brightness);</li>
+        <li style="background-color:#EFF;">}</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">void loop() {</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;pixels.clear(); // すべてのLEDの色を0にセット</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;for(int i=0; i&lt;NUMPIXELS; i++) {</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(i, pixels.Color(100, 255, 100));</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(1000);//光る時間</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;}</li>
+        <li style="background-color:#EFF;">}</li>
+        </ol></code>
+        <br>
+        <h2>ランダムまたは色を固定して光らせる</h2>
+        <hr size="5" noshade>
+        <br>
+        <code>
+            <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+            <li style="background-color:#EFF;">#include &lt;Adafruit_NeoPixel.h&gt;</li>
+            <li style="background-color:#EEF;">#define PIN 9 // 信号用のピンを指定</li>
+            <li style="background-color:#EFF;">#define NUMPIXELS 5 // LEDの数を指定</li>
+            <li style="background-color:#EEF;">int brightness=50;//数値を変更して明るさ変更</li>
+            <li style="background-color:#EFF;">Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);</li>
+            <li style="background-color:#EEF;">void setup() {</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;pixels.begin(); // NeoPixel出力ピンの初期化</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;pixels.setBrightness(brightness);</li>
+            <li style="background-color:#EFF;">}</li>
+            <li style="background-color:#EEF;">void loop() {</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;pixels.clear(); // すべてのLEDの色を0にセット</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;for(int i=2; i&lt;NUMPIXELS; i++) {</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;int r=random(0,255);//r,g,bのそれぞれを0~255の中からランダムに選ぶ、数値を固定することで色の指定も可能</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;int g=random(0,255);</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;int b=random(0,255);</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(i, pixels.Color(r,g,b));//数値を変更して色変更</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(50);</li>
+            <li style="background-color:#EEF;">}</li>
+            </ol></code>
+            <br>
+            R,G,Bの中でどれかを固定することで似たような系統の色を光らせ続けることもできる<br>
+            
+</div>
+
+</body>
+
+    
+
+</body>
+</html>
