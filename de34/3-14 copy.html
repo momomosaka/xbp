@@ -13,9 +13,205 @@
         <h2>最終発表</h2>
     
     <div>
+        <div class="photo">
+            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=jhLbuFFNNMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
         <a href="https://www.youtube.com/watch?v=jhLbuFFNNMk" target="_blank">最終発表youtubeリンク</a><br>
         <a href="files/デザイン演習発表.pdf">PowerPointPDF</a>
     <br>
+    </div>
+ <h2>プログラムコード</h2>
+    <div>
+
+        <h3>●キースタンド</h3>
+<h3 style="text-align: left;">・Arudinoのソースコード（ファミマの音声）</h3>
+<code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;">int val=0;</li>
+    <li style="background-color:#EEF;">int from_pc=<font style="color:brown;">'0'</font>;</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">#define BEATTIME 310 </li>
+    <li style="background-color:#EFF;">#define PIN 11 </li>
+    <li style="background-color:#EEF;">&nbsp;</li>
+    <li style="background-color:#EFF;">#define LA 880</li>
+    <li style="background-color:#EEF;">#define FA 740</li>
+    <li style="background-color:#EFF;">#define MI 659</li>
+    <li style="background-color:#EEF;">#define RE 587</li>
+    <li style="background-color:#EFF;">#define DLA 440</li>
+    <li style="background-color:#EEF;">void setup() {</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;pinMode(11,OUTPUT);</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;Serial.begin(9600);</li>
+    <li style="background-color:#EFF;">}</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">void loop(){</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;if(Serial.available() &gt; 0){</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;from_pc = Serial.read();</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;}</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;//１が送られてきたら音声が鳴る、0だったら鳴らない</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;if (from_pc==<font style="color:brown;">'1'</font>){</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;pinMode(11,HIGH);</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//ファ#レラレミララミファ#ミラレ</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,FA,BEATTIME) ; // ファ#</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,RE,BEATTIME) ; // レ</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,DLA,BEATTIME) ; // dラ</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,RE,BEATTIME) ; // レ</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,MI,BEATTIME) ; // ミ</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,LA,BEATTIME) ; // ラ</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME*2) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,DLA,BEATTIME) ; // dラ</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,MI,BEATTIME) ; // ミ</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,FA,BEATTIME) ; // ファ#</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,MI,BEATTIME) ; // ミ</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,DLA,BEATTIME) ; // dラ</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tone(PIN,RE,BEATTIME) ; // レ</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(BEATTIME) ;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;// exit the loop </li>
+    <li style="background-color:#EFF;">exit(0);  //0 is required to prevent error.</li>
+    <li style="background-color:#EEF;">}</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;else if (from_pc==<font style="color:brown;">'0'</font>){</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;pinMode(11,LOW);</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;}</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">delay(5000);</li>
+    <li style="background-color:#EFF;">}</li>
+    </ol></code>
+
+<h3 style="text-align: left;">・Pythonのソースコード(ファミマの音声）</h3>
+<code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;">import doyolab</li>
+    <li style="background-color:#EEF;">import time</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">#シリアルポートを入力-------------------------</li>
+    <li style="background-color:#EEF;">serial_port=<font style="color:brown;">'COM4'</font></li>
+    <li style="background-color:#EFF;">#-------------------------------------------</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">#Arduinoとのシリアル通信設定-------------------</li>
+    <li style="background-color:#EEF;">my_arduino = doyolab.set_serial(serial_port,9600)</li>
+    <li style="background-color:#EFF;">#-------------------------------------------</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">#user_key、sub_idの設定---------------------</li>
+    <li style="background-color:#EFF;">#自分のユーザーkeyを書く</li>
+    <li style="background-color:#EEF;">user_key=</li>
+    <li style="background-color:#EFF;">#subIDはどのデバイスからのデータか、どのプロジェクトのデータかなどを認識するために使います</li>
+    <li style="background-color:#EEF;">sub_id=<font style="color:brown;">'pc'</font></li>
+    <li style="background-color:#EFF;">#-------------------------------------------</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;"># --------------------------------------------------------------</li>
+    <li style="background-color:#EEF;">while True:</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;# IoTサーバーからデータの取得----------------------------------------------------</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;# user_key</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;# sub_id</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;# データ数：最新のデータからいくつのデータを取得するか？下記の例では1(最新のデータのみ）</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;data_list = doyolab.getData_From_doyolabIoTserver(user_key, sub_id, 1)</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;# リスト形式で取得される</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print(data_list)</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;#0番目のデータの塊の中の2番目のデータを読みたい（0から始まるので、本当は3番目)</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;int_data =int(data_list[0][2])</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print(int_data)</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;# --------------------------------------------------------------</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;# int_dataが400より大きかったら、<font style="color:brown;">'1'</font>を送信(音声を鳴らせる）、それ以外の時は<font style="color:brown;">'0'</font>を送る(音声を鳴らせない）</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;if int_data&gt;400:</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to_arduino = <font style="color:brown;">'1'</font></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to_arduino = <font style="color:brown;">'0'</font></li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;#Arduinoにデータを送る</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;my_arduino.write(to_arduino.encode())</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(5)#指定した秒数を待つ（msでなく秒なので、注意）　　サーバーに負荷がかかるので5より小さい値は設定しないでください。（実装する際は可能な限り大きな数字にしてください）</li>
+    </ol></code>
+
+
+<h2>●写真立て</h2>
+<h3 style="text-align: left;">・Arudinoのソースコード（明るさセンサー）</h3>
+<code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;">void setup() {</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;// put your setup code here, to run once:</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;Serial.begin(9600);</li>
+    <li style="background-color:#EEF;">}</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">void loop() {</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;// put your main code here, to run repeatedly:</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;int val=0;</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;val=analogRead(1);</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;Serial.println(val);</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;delay(500);</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">}</li>
+    </ol></code>
+
+<h3 style="text-align: left;">・Pythonのソースコード（明るさセンサー）</h3>
+<code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;">import doyolab</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">#シリアルポートを入力-------------------------</li>
+    <li style="background-color:#EEF;">serial_port=<font style="color:brown;">'COM5'</font></li>
+    <li style="background-color:#EFF;">#-------------------------------------------</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">#Arduinoとのシリアル通信設定-------------------</li>
+    <li style="background-color:#EEF;">my_arduino = doyolab.set_serial(serial_port,9600)</li>
+    <li style="background-color:#EFF;">#-------------------------------------------</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">#user_key、sub_idの設定---------------------</li>
+    <li style="background-color:#EFF;">#自分のユーザーkeyを書く</li>
+    <li style="background-color:#EEF;">user_key=</li>
+    <li style="background-color:#EFF;">#subIDはどのデバイスからのデータか、どのプロジェクトのデータかなどを認識するために使います</li>
+    <li style="background-color:#EEF;">sub_id=<font style="color:brown;">'pc'</font></li>
+    <li style="background-color:#EFF;">#-------------------------------------------</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">#while Trueは無限ループ#----------------------</li>
+    <li style="background-color:#EEF;">while True:</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;# Arduinoからreadlineコマンドでデータを取得し、data_from_arduinoという変数に格納</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;data_from_arduino=my_arduino.readline()</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;#stripコマンドで、data_from_arduinoの中の余計な文字を削除</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;#さらにintで文字で送られてきたデータをint型に変換</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;data=int(data_from_arduino.strip())</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print(data)</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;# データの設定--------------------------------</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;datetime_data = <font style="color:brown;">""</font></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;int_data = data #Arduinoから受け取った値をここでint_dataにいれる</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;float_data = <font style="color:brown;">""</font></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;txt_data = <font style="color:brown;">""</font></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;# -------------------------------------------</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;# データの送信---------------------------------</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;# user_key</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;# sub_id</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;# 日付データ（空白にしてもサーバーで自動で日付を入れてくれる）:datetim_data</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;# 整数データ:int_data</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;# 実数データ(小数を含むデータ):float_data</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;# テキストデータ:txt_data</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;ret = doyolab.sendData_To_doyolabIoTserver(user_key, sub_id, datetime_data, int_data, float_data, txt_data)</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print(ret)</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;# -------------------------------------------</li>
+    <li style="background-color:#EFF;">#-------------------------------------------</li>
+    </ol></code>
+
     </div>
     <h3>感想</h3>
 
@@ -32,7 +228,11 @@
 
 
     </div>
-   
+   <h4>班員ホームページ</h4>
+   <a href="https://hirano4219.github.io/xbp/de34/5.html" target="_blank">平野蒼依</a><br>
+   <a href="https://genki14.github.io/xbp/de34/5.html" target="_blank">まえやん</a><br>
+   <a href="https://masaki021129.github.io/xbp/de34/last.html" target="_blank">まさき</a><br>
+   <a href="https://himawari5.github.io/xbp/de34/5-34.html" target="_blank">Yrina</a><br>
         
 </div>
 
