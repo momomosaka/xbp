@@ -1,0 +1,153 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .site-title {
+    font-size: 32px;
+    margin: 0 20px;
+    color: #a0643e;
+  }
+  
+  .site-nav {
+    float: right;
+    margin: 0 20px;
+  }
+  
+  .site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .site-nav li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .site-nav a {
+    text-decoration: none;
+    color: #666;
+    padding: 5px 10px;
+  }
+  
+  .site-nav a:hover {
+    color: #a0643e;
+  }
+  
+  .hero-section {
+    position: relative;
+    height: 300px;
+    background-color: #eee;
+  }
+  
+  .hero-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('hero-image.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 32px;
+  }
+  
+  .main-section {
+    background-color: #fff;
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 24px;
+    color: #a0643e;
+  }
+  
+  .centered-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    line-height: 1.5;
+    padding: 20px;
+  }
+  
+  .photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .photo-item {
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+  
+  .photo-item img {
+    display: block;
+    width: 100%;
+  }
+  
+  .cta-section {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+  }
+  
+  .event-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-image {
+    flex-basis: 40%;
+    height: 200px;
+    background-image: url('event-image.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .event-details {
+    flex-basis: 55%;
+    padding: 20px;
+  }
+  
+  .event-title {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    color: #a0643e;
+  }
+  
+  .event-date {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+  }
+  
+  .event-description {
+    font-size: 16px;
+    line-height: 1.5;
+  
